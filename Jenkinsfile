@@ -48,14 +48,10 @@ node {
    // ------------------------------------
    stage 'Archivar'
    echo 'Archiva el paquete el paquete generado en Jenkins'
-   step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar, **/target/*.war', fingerprint: true])
-
-    // we want to pick up the version from the pom
-    def pom = readMavenPom file: 'pom.xml'
-    def version = pom.version.replace("-SNAPSHOT", ".${currentBuild.number}")
+   step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar, **/target/*.war', fingerprint: true])    
 
     // ------------------------------------
-    // -- ETAPA: Instalar desarrollo
+    // -- ETAPA: Instalar en release
     // ------------------------------------
 
     // we want to pick up the version from the pom
