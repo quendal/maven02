@@ -10,6 +10,15 @@
   <scm>
     <developerConnection>scm:git:https://github.com/quendal/maven02.git</developerConnection>
   </scm>
+
+   <distributionManagement>
+    <repository>
+      <id>internal</id>
+      <url>http://35.164.30.97:8080/repository/internal/</url>
+    </repository>
+  </distributionManagement>
+
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
